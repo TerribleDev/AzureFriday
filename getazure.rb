@@ -1,7 +1,10 @@
 require 'rubygems'
 require 'open-uri'
 require 'Nokogiri'
+require 'FileUtils'
 
+FileUtils.mkdir_p 'downloads/'
+FileUtils.cd 'downloads/'
 xml = Nokogiri::XML(open('http://s.ch9.ms/Shows/Azure-Friday/feed/mp4high'))
 item = xml.xpath('//item')
 
