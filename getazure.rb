@@ -10,9 +10,10 @@ item = xml.xpath('//item')
 
 item.each do |s|
   source = s.at('enclosure')['url'].to_s
-  next if File.exist? source.split('/').last
-  File.open("#{source.split('/').last}", "wb") do |file|
-    puts " downloading " + source.split('/').last
+  name   = source.split('/').last
+  next if File.exist? name
+  File.open(name, "wb") do |file|
+    puts " downloading " + name
     file.write open(source).read
   end
 end
