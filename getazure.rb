@@ -10,8 +10,8 @@ def podcasts
   Nokogiri::XML(open(feed)).xpath('//item')
 end
 
-podcasts.each do |s|
-  source      = s.at('enclosure')['url'].to_s
+podcasts.each do |podcast|
+  source      = podcast.at('enclosure')['url'].to_s
   name        = source.split('/').last
   local_file  = "downloads/#{name}"
   next if File.exist? local_file
