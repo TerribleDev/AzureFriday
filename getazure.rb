@@ -22,3 +22,5 @@ podcasts.each do |podcast|
     file.write open(source).read
   end
 end
+
+puts 'all done!
