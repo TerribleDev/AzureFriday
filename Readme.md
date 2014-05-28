@@ -6,6 +6,6 @@ To Run you need ruby and rubygems installed
 
 in the root directory run 
 
-*gem install bundle
-*bundle
-*ruby getazure.rb
+* gem install bundle
+* bundle
+* ruby getazure.rb
